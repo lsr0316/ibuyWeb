@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace ibuyWeb
+    //clearlove777777
 {
     public class Program
     {
