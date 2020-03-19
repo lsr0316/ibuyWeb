@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ibuyWeb.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace ibuyWeb
 {
@@ -26,7 +28,14 @@ namespace ibuyWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
+            services.AddDbContext<userinforContent>(opt =>
+              opt.UseInMemoryDatabase("userList"));
+            services.AddDbContext<iteminforContent>(opt =>
+                   opt.UseInMemoryDatabase("itemList"));
             services.AddControllers();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
