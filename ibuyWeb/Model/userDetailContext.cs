@@ -7,14 +7,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ibuyWeb.Model
 {
-    public class userinforContent:DbContext
+    public class userDetailContext:DbContext
     {
 
-        public userinforContent(DbContextOptions<userinforContent> options)
+        public userDetailContext(DbContextOptions<userDetailContext> options)
             : base(options)
         {
         }
 
-        public DbSet<userinfor> userinfor { get; set; }
+        public DbSet<userDetail> userDetail { get; set; }
     }
 }

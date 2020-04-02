@@ -6,15 +6,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ibuyWeb.Model
 {
-    public class iteminforContent:DbContext
+    public class itemDetailContext:DbContext
     {
 
 
-        public iteminforContent(DbContextOptions<iteminforContent> options)
+        public itemDetailContext(DbContextOptions<itemDetailContext> options)
            : base(options)
         {
         }
 
-        public DbSet<iteminfor> iteminfor { get; set; }
+        public DbSet<itemDetail> itemDetail { get; set; }
     }
 }

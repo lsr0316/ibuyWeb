@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace ibuyWeb.Model
 {
-    public class iteminfor
+    public class itemDetail
     {
         public long id { get; set; }
         public string itemname { get; set; }
         public string itemnumber { get; set; }
         public string itemprice { get; set; }
+       public string itdescription { get;  set; }
        
     }
 }

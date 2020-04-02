@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ibuyWeb.Model
 {
-    public class userinfor
+    public class userDetail
     {
         public long id { get; set; }
         public string firstname { get; set; }

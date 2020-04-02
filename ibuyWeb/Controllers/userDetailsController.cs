@@ -11,48 +11,48 @@ namespace ibuyWeb.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class iteminforsController : ControllerBase
+    public class userDetailsController : ControllerBase
     {
-        private readonly iteminforContent _context;
+        private readonly userDetailContext _context;
 
-        public iteminforsController(iteminforContent context)
+        public userDetailsController(userDetailContext context)
         {
             _context = context;
         }
 
-        // GET: api/iteminfors
+        // GET: api/userDetails
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<iteminfor>>> Getiteminfor()
+        public async Task<ActionResult<IEnumerable<userDetail>>> GetuserDetail()
         {
-            return await _context.iteminfor.ToListAsync();
+            return await _context.userDetail.ToListAsync();
         }
 
-        // GET: api/iteminfors/5
+        // GET: api/userDetails/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<iteminfor>> Getiteminfor(long id)
+        public async Task<ActionResult<userDetail>> GetuserDetail(long id)
         {
-            var iteminfor = await _context.iteminfor.FindAsync(id);
+            var userDetail = await _context.userDetail.FindAsync(id);
 
-            if (iteminfor == null)
+            if (userDetail == null)
             {
                 return NotFound();
             }
 
-            return iteminfor;
+            return userDetail;
         }
 
-        // PUT: api/iteminfors/5
+        // PUT: api/userDetails/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putiteminfor(long id, iteminfor iteminfor)
+        public async Task<IActionResult> PutuserDetail(long id, userDetail userDetail)
         {
-            if (id != iteminfor.id)
+            if (id != userDetail.id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(iteminfor).State = EntityState.Modified;
+            _context.Entry(userDetail).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace ibuyWeb.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!iteminforExists(id))
+                if (!userDetailExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,37 @@ namespace ibuyWeb.Controllers
             return NoContent();
         }
 
-        // POST: api/iteminfors
+        // POST: api/userDetails
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<iteminfor>> Postiteminfor(iteminfor iteminfor)
+        public async Task<ActionResult<userDetail>> PostuserDetail(userDetail userDetail)
         {
-            _context.iteminfor.Add(iteminfor);
+            _context.userDetail.Add(userDetail);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("Getiteminfor", new { id = iteminfor.id }, iteminfor);
+            return CreatedAtAction("GetuserDetail", new { id = userDetail.id }, userDetail);
         }
 
-        // DELETE: api/iteminfors/5
+        // DELETE: api/userDetails/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<iteminfor>> Deleteiteminfor(long id)
+        public async Task<ActionResult<userDetail>> DeleteuserDetail(long id)
         {
-            var iteminfor = await _context.iteminfor.FindAsync(id);
-            if (iteminfor == null)
+            var userDetail = await _context.userDetail.FindAsync(id);
+            if (userDetail == null)
             {
                 return NotFound();
             }
 
-            _context.iteminfor.Remove(iteminfor);
+            _context.userDetail.Remove(userDetail);
             await _context.SaveChangesAsync();
 
-            return iteminfor;
+            return userDetail;
         }
 
-        private bool iteminforExists(long id)
+        private bool userDetailExists(long id)
         {
-            return _context.iteminfor.Any(e => e.id == id);
+            return _context.userDetail.Any(e => e.id == id);
         }
     }
 }

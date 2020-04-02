@@ -30,9 +30,9 @@ namespace ibuyWeb
         {
 
 
-            services.AddDbContext<userinforContent>(opt =>
+            services.AddDbContext<userDetailContext>(opt =>
               opt.UseInMemoryDatabase("userList"));
-            services.AddDbContext<iteminforContent>(opt =>
+            services.AddDbContext<itemDetailContext>(opt =>
                    opt.UseInMemoryDatabase("itemList"));
             services.AddControllers();
           
